@@ -1,5 +1,6 @@
 .idea/
 SweeTree_env/
+sweetree_server/.env
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
