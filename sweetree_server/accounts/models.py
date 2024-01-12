@@ -23,14 +23,10 @@ class UserManager(BaseUserManager):
 
 
 class User(AbstractBaseUser, PermissionsMixin):
-    email = models.EmailField(max_length=255, unique=True)
+    email       = models.EmailField(max_length=255, unique=True)
     date_joined = models.DateTimeField(auto_now_add=True)
-    is_active = models.BooleanField(default=True)
-    is_staff = models.BooleanField(default=False)
-
-    # box_name = models.CharField(max_length=20, null=False) # need modify
-    # box_type = models.CharField(max_length=10, default='None')
-    # is_box_public = models.BooleanField(default=False)
+    is_active   = models.BooleanField(default=True)
+    is_staff    = models.BooleanField(default=False)
 
     objects = UserManager()
 
