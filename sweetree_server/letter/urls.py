@@ -14,12 +14,13 @@ from letter.views import LetterViewSet
 '''
 
 router = DefaultRouter()
-router.register(r'boxes', BoxViewSet)
+router.register(r'box', BoxViewSet)
 
-box_router = routers.NestedSimpleRouter(router, r'boxes', lookup='box')
+box_router = routers.NestedSimpleRouter(router, r'box', lookup='box')
 box_router.register(r'letters', LetterViewSet, basename='box-letters')
 
 
 urlpatterns = [
+    path('', include(router.urls)),
     path('', include(box_router.urls)),
 ]
