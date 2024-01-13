@@ -177,7 +177,7 @@ ACCOUNT_EMAIL_VERIFICATION = 'none'
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.SessionAuthentication', # Admin
-        'dj-rest-auth.jwt_auth.JWTCookieAuthentication',
+        'dj_rest_auth.jwt_auth.JWTCookieAuthentication',
     ],
     'DEFAULT_PERMISSION_CLASSES': ['rest_framework.permissions.IsAuthenticated', ],
 }
