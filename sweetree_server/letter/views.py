@@ -18,6 +18,7 @@ from .serializers import (
 )
 
 from letter.models import Letter
+from box.models import Box
 
 
 class LetterViewSet(
@@ -25,6 +26,10 @@ class LetterViewSet(
     mixins.CreateModelMixin,
     mixins.ListModelMixin,
 ):
+
+    def perform_create(self, serializer):
+        box = Box.objects.get(pk=self.kwargs.get('box_pk'))
+        serializer.save(box_id=box)
 
     @action(detail=False, methods=['get'])
     def count(self, request, *args, **kwargs):
@@ -37,7 +42,8 @@ class LetterViewSet(
             return LetterListSerializer
 
     def get_queryset(self):
-        return Letter.objects.filter(box_id=self.kwargs.get('box_id'))
+        box = Box.objects.get(pk=self.kwargs.get('box_pk'))
+        return Letter.objects.filter(box_id=box)
 
     '''NEED TO FIX'''
     # def get_permissions(self):

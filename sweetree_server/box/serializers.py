@@ -16,10 +16,10 @@ class BoxRetrieveSerializer(serializers.ModelSerializer):
 
 
 class BoxCreateSerializer(serializers.ModelSerializer):
+    '''유저 인증 구현 뒤, 수정할 것'''
     class Meta:
         model = Box
         fields = [
-            '''유저 인증 구현 뒤, 수정할 것'''
             # 'user_id',
             'box_name',
             'box_type',
