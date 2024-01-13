@@ -24,8 +24,8 @@ class BoxViewSet(
 ):
     queryset = Box.objects.all()
 
+    '''유저 인증 구현 뒤, 수정할 것'''
     def perform_create(self, serializer):
-        '''유저 인증 구현 뒤, 수정할 것'''
         serializer.save(user_id=User.objects.get(pk=1))
         # serializer.save(user_id=self.request.user)
 
