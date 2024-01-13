@@ -23,7 +23,8 @@ class BoxViewSet(
     queryset = Box.objects.all()
 
     def perform_create(self, serializer):
-        serializer.save(user_id=self.request.user)
+        serializer.save(user_id=1)
+        # serializer.save(user_id=self.request.user)
 
     def get_serializer_class(self):
         if self.action == 'create':
