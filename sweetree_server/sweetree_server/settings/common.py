@@ -181,8 +181,8 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.SessionAuthentication', # Admin
         'dj_rest_auth.jwt_auth.JWTCookieAuthentication',
     ],
+    '''유저 인증 구현 뒤, 수정할 것'''
     'DEFAULT_PERMISSION_CLASSES': [
-        '''유저 인증 구현 뒤, 수정할 것'''
         # 'rest_framework.permissions.IsAuthenticated',
         'rest_framework.permissions.AllowAny'
     ],
