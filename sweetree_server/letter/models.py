@@ -1,8 +1,10 @@
 from django.db import models
 
+from box.models import Box
+
 
 class Letter(models.Model):
-    box_id      = models.ForeignKey('box.Box', on_delete=models.CASCADE, verbose_name="Box id")
+    box_id      = models.ForeignKey(Box, on_delete=models.CASCADE, verbose_name="Box id")
     choco_type  = models.CharField(max_length=4, verbose_name="Choco type")
     nickname    = models.CharField(max_length=20, verbose_name="Nickname")
     contents    = models.TextField(verbose_name="Contents")
