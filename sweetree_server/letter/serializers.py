@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from sweetree_server.letter.models import Letter
+from letter.models import Letter
 
 
 class LetterCreateSerializer(serializers.ModelSerializer):

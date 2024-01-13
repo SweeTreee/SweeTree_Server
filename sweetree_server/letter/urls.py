@@ -3,8 +3,8 @@ from django.conf.urls import include
 from rest_framework.routers import DefaultRouter
 from rest_framework_nested import routers
 
-from sweetree_server.box.views import BoxViewSet
-from sweetree_server.letter.views import LetterViewSet
+from box.views import BoxViewSet
+from letter.views import LetterViewSet
 
 
 '''

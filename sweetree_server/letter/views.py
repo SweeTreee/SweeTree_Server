@@ -17,7 +17,7 @@ from .serializers import (
     LetterListSerializer,
 )
 
-from sweetree_server.letter.models import Letter
+from letter.models import Letter
 
 
 class LetterViewSet(
