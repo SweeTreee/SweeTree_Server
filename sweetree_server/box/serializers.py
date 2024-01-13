@@ -2,6 +2,7 @@ from rest_framework import serializers
 
 from box.models import Box
 
+
 class BoxRetrieveSerializer(serializers.ModelSerializer):
     class Meta:
         model = Box
@@ -18,7 +19,8 @@ class BoxCreateSerializer(serializers.ModelSerializer):
     class Meta:
         model = Box
         fields = [
-            'user_id',
+            '''유저 인증 구현 뒤, 수정할 것'''
+            # 'user_id',
             'box_name',
             'box_type',
             'is_box_public',
