@@ -10,7 +10,8 @@ from .serializers import (
     BoxUpdateSerializer,
 )
 
-from sweetree_server.box.models import Box
+# from sweetree_server.box.models import Box
+from box.models import Box
 
 
 class BoxViewSet(

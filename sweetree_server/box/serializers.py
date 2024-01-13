@@ -1,7 +1,6 @@
 from rest_framework import serializers
 
-from sweetree_server.box.models import Box
-
+from box.models import Box
 
 class BoxRetrieveSerializer(serializers.ModelSerializer):
     class Meta:
