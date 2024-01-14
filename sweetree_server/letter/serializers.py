@@ -20,5 +20,6 @@ class LetterListSerializer(serializers.ModelSerializer):
             'pk',
             'nickname',
             'contents',
+            'choco_type',
             'created_at',
         ]
