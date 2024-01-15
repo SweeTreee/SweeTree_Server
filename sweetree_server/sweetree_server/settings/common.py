@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     'rest_framework',
 
     # Authentication
+    'django.contrib.sites', # allauth
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -168,6 +169,8 @@ AUTH_USER_MODEL = "accounts.User"
 
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+SITE_ID = 2
 
 ACCOUNT_USER_MODEL_USERNAME_FIELD = None
 ACCOUNT_EMAIL_REQUIRED = True
