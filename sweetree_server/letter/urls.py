@@ -10,7 +10,7 @@ from letter.views import LetterViewSet
 '''
     /box/<int:pk>/letters/                              # 생성      POST
     /box/<int:pk>/letters/check/                        # 단일 조회  GET
-    /box/<int:pk>/letters/count/                       # 수정      PATCH
+    /box/<int:pk>/letters/count/                        # 수정      PATCH
 '''
 
 router = DefaultRouter()
