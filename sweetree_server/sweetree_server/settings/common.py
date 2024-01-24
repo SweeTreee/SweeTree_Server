@@ -80,7 +80,6 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -181,7 +180,6 @@ ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework.authentication.SessionAuthentication', # Admin
         'dj_rest_auth.jwt_auth.JWTCookieAuthentication',
     ],
     '''유저 인증 구현 뒤, 수정할 것'''
@@ -195,9 +193,13 @@ REST_FRAMEWORK = {
 REST_AUTH = {
     'TOKEN_MODEL': None,
     'USE_JWT': True,
-    'JWT_AUTH_HTTPONLY': False,
+    'JWT_AUTH_HTTPONLY': True,
+    'JWT_AUTH_COOKIE_USE_CSRF': False,
+    'JWT_AUTH_SECURE': True,
+    'SESSION_LOGIN': False,
 }
 
+CORS_ALLOW_CREDENTIALS = True
 
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': datetime.timedelta(minutes=60),
